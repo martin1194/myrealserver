@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
-import { bearing } from "./bearing";
+import { bearing } from './bearing';
 
 @Injectable({
   providedIn: "root"
