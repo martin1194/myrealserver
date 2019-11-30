@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://treeeee-bear.com/back-end",
+    "secure": false
+  }
+}
