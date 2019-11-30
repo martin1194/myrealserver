@@ -21,7 +21,7 @@ export class BearingService {
   getAll(): Observable<Bearing[]> {
     return this.http.get(`${this.baseUrl}/list`).pipe(
       map(res => {
-        this.bearings = res["data"];
+        this.bearings = res['data'];
         return this.bearings;
       }),
       catchError(this.handleError)
