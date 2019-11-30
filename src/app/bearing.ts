@@ -1,4 +1,4 @@
-export class Bearing {
+export class bearing {
   constructor(
     id:   number,
     brand_name: string,
