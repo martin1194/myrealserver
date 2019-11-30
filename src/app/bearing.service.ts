@@ -7,7 +7,6 @@ import {
 
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
-
 import { Bearing } from './bearing';
 
 @Injectable({
