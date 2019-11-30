@@ -9,9 +9,10 @@ import { BearingService } from './bearing.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements OnInit {
+  name = 'Angular';
   bearings: Bearing[];
-  error = '';
-  success = '';
+  error = '錯誤';
+  success = '成功';
         
   constructor(private bearingService: BearingService) {
   }
