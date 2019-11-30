@@ -8,18 +8,18 @@ import {
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
-import { bearing } from './bearing';
+import { Bearing } from './bearing';
 
 @Injectable({
   providedIn: "root"
 })
 export class BearingService {
   baseUrl = "http://treeeee-bear.com/back-end";
-  bearings: bearing[];
+  bearings: Bearing[];
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<bearing[]> {
+  getAll(): Observable<Bearing[]> {
     return this.http.get(`${this.baseUrl}/list`).pipe(
       map(res => {
         this.bearings = res["data"];

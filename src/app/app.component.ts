@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { bearing } from './bearing';
+import { Bearing } from './bearing';
 import { BearingService } from './bearing.service';
 
 @Component({
@@ -10,17 +10,24 @@ import { BearingService } from './bearing.service';
 })
 export class AppComponent implements OnInit {
   name = 'Angular';
-  cars: bearing[];
+  bearings: Bearing[];
   error = '';
   success = '';
         
-  constructor(private carService: BearingService) {
+  constructor(private bearingService: BearingService) {
   }
         
   ngOnInit() {
-    this.getCars();
+    this.getbearings();
   }
         
-  getCars(): void {
+  getbearings(): void {
+    this.bearingService.getAll().subscribe(
+      (res: Bearing[]) => {
+        this.bearings = res;
+      },
+      (err) => {
+        this.error = err;
+      }
+    );
   }
-}
