@@ -14,7 +14,7 @@ import { Bearing } from './bearing';
   providedIn: "root"
 })
 export class BearingService {
-  baseUrl = "http://treeeee-bear.com/back-end";
+  baseUrl = "http://treeeee-bear.com/back-end/api";
   bearings: Bearing[];
 
   constructor(private http: HttpClient) {}
