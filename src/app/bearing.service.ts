@@ -19,7 +19,7 @@ getAll(): Observable<Bearing[]> {
     map((res) => {
       this.bearing = res['data'];
       return this.bearing;
-  })
+  });
 }
 }
 
