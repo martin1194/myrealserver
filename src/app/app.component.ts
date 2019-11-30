@@ -9,7 +9,6 @@ import { BearingService } from './bearing.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements OnInit {
-  name = 'Angular';
   bearings: Bearing[];
   error = '';
   success = '';
@@ -30,4 +29,4 @@ export class AppComponent implements OnInit {
         this.error = err;
       }
     );
-  }
+  }}
