@@ -1,6 +1,6 @@
 export class bearing {
   constructor(
-    id?: number,
+    bearing_id?: number,
     brand_name?: string,
     model_number?: string,
     amount?:   number) {}
