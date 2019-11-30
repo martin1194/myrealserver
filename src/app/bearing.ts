@@ -3,5 +3,5 @@ export class Bearing {
     brand_name: string,
     model_number: string,
     amount:   number,
-    bearing_id?: number,) {}
+    bearing_id?: number) {}
 }
