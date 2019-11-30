@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { bearing } from './bearing';
+import { Bearing } from './bearing';
 
 @Injectable({
   providedIn: 'root'
