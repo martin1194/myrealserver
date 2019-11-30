@@ -19,7 +19,7 @@ getAll(): Observable<bearing[]> {
     map((res) => {
       this.bearings = res['data'];
       return this.bearings;
-  })
+  }),
   catchError(this.handleError));
 }
 }
