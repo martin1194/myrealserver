@@ -1,7 +1,7 @@
-export class bearing {
+export class Bearing {
   constructor(
     id:   number
-    brand_name: string,
+    brand name: string,
     model_number: string,
     amount:   number) {}
 }

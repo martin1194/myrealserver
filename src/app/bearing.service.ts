@@ -9,8 +9,18 @@ import { bearing } from './bearing';
 @Injectable({
   providedIn: 'root'
 })
-export class BearingService {
-  constructor(private http: HttpClient) { }
+export class BearingService {baseUrl = 'http://treeeee-bear.com/back-end';
+bearing: Bearing[];
+                
+constructor(private http: HttpClient) { }
+                
+getAll(): Observable<Bearing[]> {
+  return this.http.get(`${this.baseUrl}/list`).pipe(
+    map((res) => {
+      this.bearing = res['data'];
+      return this.bearing;
+  });
+}
 }
 
 
