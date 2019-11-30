@@ -15,7 +15,7 @@ import { Bearing } from './bearing';
   providedIn: "root"
 })
 export class BearingService {
-  baseUrl = "https://treeeee-bear.com/back-end/api";
+  baseUrl = "http://treeeee-bear.com/back-end/api";
   bearings: Bearing[];
 
   constructor(private http: HttpClient) {}
@@ -33,6 +33,6 @@ export class BearingService {
     console.log(error);
 
     // return an observable with a user friendly message
-    return throwError("Error! something went wrong.");
+    return throwError("Error! something went wrong!!!");
   }
 }
