@@ -4,21 +4,21 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { Bearing } from './Bearing';
+import { bearing } from './bearing';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BearingService {baseUrl = 'http://treeeee-bear.com/back-end';
-bearing: Bearing[];
+bearings: bearing[];
                 
 constructor(private http: HttpClient) { }
                 
-getAll(): Observable<Bearing[]> {
+getAll(): Observable<bearing[]> {
   return this.http.get(`${this.baseUrl}/list`).pipe(
     map((res) => {
-      this.bearing = res['data'];
-      return this.bearing;
+      this.bearings = res['data'];
+      return this.bearings;
   });
 }
 }
