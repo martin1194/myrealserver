@@ -7,6 +7,24 @@
  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+   <!-- Position Column -->
+  <ng-container matColumnDef="brand_name">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *ngFor="let item of bearings"> {{item.brand_name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="bearing_model_number">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *ngFor="let item of bearings"> {{item.bearing_model_number}} </td>
+  </ng-container>
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *ngFor="let item of bearings"> {{item.amount}} </td>
+  </ng-container>
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 <div id="beading amount"class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">

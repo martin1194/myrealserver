@@ -10,6 +10,7 @@ import {
 import { Observable, throwError } from "rxjs";
 import { map, catchError, retry } from "rxjs/operators";
 import { Bearing } from './bearinglist.component';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Injectable({
   providedIn: "root"
@@ -17,7 +18,8 @@ import { Bearing } from './bearinglist.component';
 export class BearingService {
   baseUrl = "https://treeeee-bear.com/back-end/api";
   bearings: Bearing[];
-
+  dataSource = new MatTableDataSource(this.bearings);
+  displayedColumns: string[] = ['brand_name', 'bearing_model_number', 'amount'];
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Bearing[]> {
