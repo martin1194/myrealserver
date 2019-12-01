@@ -6,11 +6,14 @@ import { appRoutingModule } from './app.routing';
 
 
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello.component';
+
+
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { HelloComponent } from './hello.component';
 
+import { BearingListComponent } from './bearing/bearinglist';
 
 @NgModule({
   imports:      [ 
@@ -25,6 +28,7 @@ import { HelloComponent } from './hello.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent, 
+    BearingListComponent,
   ],
   bootstrap:    [ AppComponent ]
 })

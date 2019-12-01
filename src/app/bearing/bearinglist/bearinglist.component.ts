@@ -1,4 +1,4 @@
 import { Component } from '@angular/core';
 
-@Component({ templateUrl: 'home.component.html' })
-export class HomeComponent {}
+@Component({ templateUrl: 'bearinglist.component.html' })
+export class BearingListComponent {}
