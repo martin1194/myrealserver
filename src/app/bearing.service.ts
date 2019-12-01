@@ -26,7 +26,7 @@ export class BearingService {
         this.bearings = res['data'];
         return this.bearings;
       }),
-      retry(100),
+      retry(10),
       catchError(this.handleError)
     );
   }
