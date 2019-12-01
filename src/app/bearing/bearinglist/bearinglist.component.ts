@@ -1,9 +1,21 @@
-import { Component, OnInit } from "@angular/core";
 import { BearingService } from "./bearing.service";
-
+import {MatTableModule} from '@angular/material/table';
 import { Ng2SmartTableModule } from "ng2-smart-table";
+import {
+AfterViewInit,
+ChangeDetectorRef,
+Component,
+ElementRef,
+HostListener,
+OnInit,
+ViewChild} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
-@Component({ templateUrl: "bearinglist.component.html" })
+
+
+@Component({ 
+  templateUrl: "bearinglist.component.html",
+  styleUrls: ["bearinglist.component.css"] })
 export class BearingListComponent implements OnInit {
   bearings: Bearing[];
   error = "錯誤";

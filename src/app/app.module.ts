@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { appRoutingModule } from './app.routing';
-
-
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 
@@ -20,7 +20,9 @@ import { BearingListComponent } from './bearing/bearinglist';
     BrowserModule, 
     FormsModule, 
     HttpClientModule, 
-    appRoutingModule 
+    appRoutingModule,
+    MatTableModule,
+    MatFormFieldModule
   ],
   declarations: [ 
     AppComponent, 

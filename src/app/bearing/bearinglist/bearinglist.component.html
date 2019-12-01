@@ -2,11 +2,46 @@
 <div *ngIf="error">{{error}}</div>
 <div *ngIf="success">{{success}}</div>
 
-    
+<h2>BEARING數量</h2>
+<mat-form-field>
+ <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
 
-<div id="theList">
-  <h2>The list</h2>
-  <ul>
-    <li *ngFor="let item of bearings">{{item.brand_name}} | {{item.bearing_model_number}} | {{item.amount}} </li>
-  </ul>
+<div id="beading amount"class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="md-form">
+        <input type="text" class="form-control" [(ngModel)]="searchText" (keyup)="searchItems()" id="search-input"
+               mdbInput>
+        <label for="search-input">Search</label>
+      </div>
+    </div>
+    <table stickyHeader="true" hover="true" striped="true" class="z-depth-1">
+      <thead class="sticky-top">
+         <tr>
+           <th> 牌子</th>
+           <th> 型號</th>
+           <th> 數量</th>
+      </tr>
+      </thead>
+      <tbody #row>
+         <tr mdbTableCol (rowCreated)="onRowCreate($event)" (rowRemoved)="onRowRemove($event)"
+          *ngFor="let item of bearings">
+          <td>{{item.brand_name}}</td>
+          <td>{{item.bearing_model_number}}</td>
+          <td>{{item.amount}}</td>
+         </tr>
+      </tbody>
+      <tfoot class="grey lighten-5 w-100">
+      <tr>
+        <td colspan="4">
+          
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
 </div>
+  
+
+
