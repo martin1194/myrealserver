@@ -1,0 +1,9 @@
+<div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div>
+    
+<div id="theList">
+  <h2>The list</h2>
+  <ul>
+    <li *ngFor="let item of bearings">{{item.brand_name}} | {{item.bearing_model_number}} | {{item.amount}} </li>
+  </ul>
+</div>
