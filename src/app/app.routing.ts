@@ -10,7 +10,9 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'bearinglist', component: BearingListComponent },
+
+    //bearing表
+    { path: 'bearing/bearinglist', component: BearingListComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
