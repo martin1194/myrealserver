@@ -7,15 +7,15 @@ import { BearingListComponent } from './bearing/bearinglist';
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: '', component: HomeComponent, outlet: '' },
+    { path: 'login', component: LoginComponent, outlet: '' },
+    { path: 'register', component: RegisterComponent, outlet: '' },
 
     //bearing表
-    { path: 'bearing/bearinglist', component: BearingListComponent },
+    { path: 'bearing/bearinglist', component: BearingListComponent, outlet: '' },
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '', outlet: '' }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
