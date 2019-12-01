@@ -4,7 +4,7 @@ import { Bearing } from './bearing';
 import { BearingService } from './bearing.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'bearing-list',
   templateUrl: './bearing.component.html',
   styleUrls: [ './bearing.component.css' ]
 })
