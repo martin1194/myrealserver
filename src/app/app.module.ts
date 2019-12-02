@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {BearinglModule} from './bearing/bearinglist/bearing.moudule';
+import { BearingService } from "./bearing/bearinglist/bearing.service";
 
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
@@ -32,7 +33,10 @@ import { BearingListComponent } from './bearing/bearinglist';
     RegisterComponent,
     LoginComponent, 
     BearingListComponent,
+    
   ],
+  entryComponents: [],
+  providers: [BearingService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

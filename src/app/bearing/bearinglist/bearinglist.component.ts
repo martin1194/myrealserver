@@ -26,19 +26,21 @@ export class BearingListComponent implements OnInit {
 
   ngOnInit() {
     this.getbearings();
+    this.dataSource.paginator = this.paginator;
   }
 
   getbearings(): void {
     this.bearingService.getAll().subscribe(
       (res: Bearing[]) => {
         this.bearings = res;
-        dataSource = new MatTableDataSource<data>(this.bearings);
       },
       err => {
         this.error = err;
       }
     );
   }
+  dataSource = new MatTableDataSource(this.bearings);
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 }
 
 export class Bearing {
