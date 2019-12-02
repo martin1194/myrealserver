@@ -32,6 +32,7 @@ export class BearingListComponent implements OnInit {
     this.bearingService.getAll().subscribe(
       (res: Bearing[]) => {
         this.bearings = res;
+        dataSource = new MatTableDataSource<data>(this.bearings);
       },
       err => {
         this.error = err;

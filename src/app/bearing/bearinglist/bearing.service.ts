@@ -18,7 +18,6 @@ import {MatTableDataSource} from '@angular/material/table';
 export class BearingService {
   baseUrl = "https://treeeee-bear.com/back-end/api";
   bearings: Bearing[];
-  dataSource = new MatTableDataSource(this.bearings);
   displayedColumns: string[] = ['brand_name', 'bearing_model_number', 'amount'];
   constructor(private http: HttpClient) {}
 
