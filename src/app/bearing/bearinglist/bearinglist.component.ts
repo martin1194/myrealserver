@@ -15,6 +15,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
 @Component({ 
+  selector: 'bearinglist.component',
   templateUrl: "bearinglist.component.html",
   styleUrls: ["bearinglist.component.css"] })
 export class BearingListComponent implements OnInit {
