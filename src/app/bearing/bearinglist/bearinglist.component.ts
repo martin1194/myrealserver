@@ -49,7 +49,7 @@ export class BearingListComponent implements OnInit {
   this.billing=this.data._links.self;
 }
 
-export class Bearing {
+  export class Bearing {
   constructor(
     brand_name: string,
     model_number: string,
