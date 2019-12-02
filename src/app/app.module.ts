@@ -7,7 +7,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-
+import {BearinglModule} from './bearing/bearinglist/bearing.moudule';
 
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
@@ -22,7 +22,8 @@ import { BearingListComponent } from './bearing/bearinglist';
     HttpClientModule, 
     appRoutingModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    BearinglModule
   ],
   declarations: [ 
     AppComponent, 

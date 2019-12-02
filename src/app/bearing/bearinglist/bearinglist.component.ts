@@ -10,8 +10,9 @@ HostListener,
 OnInit,
 ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({ 
   templateUrl: "bearinglist.component.html",
