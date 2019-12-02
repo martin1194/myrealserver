@@ -8,27 +8,32 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
   <ng-container matColumnDef="brand_name">
-    <mat-header-cell *matHeaderCellDef> brand_name </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> 牌子名 </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.brand_name}} </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="bearing_model_number">
-    <mat-header-cell *matHeaderCellDef> bearing_model_number </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> 型號 </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.bearing_model_number}} </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="amount">
-    <mat-header-cell *matHeaderCellDef> amount </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> 數量 </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.amount}} </mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="bearing_id">
     <mat-header-cell *matHeaderCellDef> bearing_id </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </mat-cell>
   </ng-container>
+  
     <mat-header-row *matHeaderRowDef="['brand_name', 'bearing_model_number', 'amount', 'bearing_id']"></mat-header-row>
     <mat-row *matRowDef="let rows; columns: ['brand_name', 'bearing_model_number', 'amount', 'bearing_id'];"></mat-row>
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
 <div id="beading amount"class="container">
