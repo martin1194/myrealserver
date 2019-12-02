@@ -34,8 +34,9 @@ import {TableBasicExample} from './bearing/bearinglist';
     LoginComponent, 
     BearingListComponent
   ],
-  entryComponents: [BearingListComponent],
+  entryComponents: [],
   providers: [BearingService,TableBasicExample],
-  bootstrap:    [ AppComponent,BearingListComponent ]
+  bootstrap:    [ AppComponent, ],
+  exports: [BearingModule,],
 })
 export class AppModule { }
