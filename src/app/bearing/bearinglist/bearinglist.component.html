@@ -8,7 +8,8 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table class="table table-striped" [mfData]="billing" #mf="mfDataTable" [mfRowsOnPage]="5">
+<!--table mat-table [dataSource]="dataSource" class="mat-elevation-z8"-->
    <!-- Position Column -->
   <ng-container matColumnDef="brand_name">
     <th mat-header-cell *matHeaderCellDef> No. </th>

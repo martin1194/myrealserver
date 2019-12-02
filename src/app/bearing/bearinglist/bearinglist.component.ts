@@ -22,7 +22,7 @@ export class BearingListComponent implements OnInit {
   error = "錯誤";
   success = "成功";
 
-  constructor(private bearingService: BearingService) {}
+  
 
   ngOnInit() {
     this.getbearings();
@@ -41,6 +41,12 @@ export class BearingListComponent implements OnInit {
   }
   dataSource = new MatTableDataSource(this.bearings);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+    billing:any[]=[];
+
+  constructor(private bearingService: BearingService){
+  console.log("Data",this.data._links.self);
+
+  this.billing=this.data._links.self;
 }
 
 export class Bearing {
