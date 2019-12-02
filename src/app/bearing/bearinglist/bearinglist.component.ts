@@ -43,10 +43,7 @@ export class BearingListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     billing:any[]=[];
 
-  constructor(private bearingService: BearingService){
-  console.log("Data",this.data._links.self);
 
-  this.billing=this.data._links.self;
 }
 
   export class Bearing {
