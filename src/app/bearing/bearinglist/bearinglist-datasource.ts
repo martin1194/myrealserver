@@ -1,3 +1,4 @@
+
 import { BearingService } from "./bearing.service";
 import {
 AfterViewInit,
@@ -17,6 +18,28 @@ import {DataSource} from '@angular/cdk/collections';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
+
+
+
+
+
+
+
+export interface Bearing {
+  brand_name: string;
+  model_number: string;
+  amount: number;
+  bearing_id: number;
+}
+
+export class Bearing1 {
+  constructor(
+    brand_name: string,
+    model_number: string,
+    amount: number,
+    bearing_id?: number
+  ) {}
+}
 
 
 export class BearingListDataSource implements OnInit {
@@ -46,19 +69,4 @@ export class BearingListDataSource implements OnInit {
 
 }
 
-  export class Bearing1 {
-  constructor(
-    brand_name: string,
-    model_number: string,
-    amount: number,
-    bearing_id?: number
-  ) {}
-}
 
-
-export interface Bearing {
-  brand_name: string;
-  model_number: string;
-  amount: number;
-  bearing_id: number;
-}

@@ -26,7 +26,7 @@ import {TableBasicExample} from './bearing/bearinglist';
     appRoutingModule,
     MatTableModule,
     MatFormFieldModule,
-    BearingModule
+    BearingModule,
   ],
   declarations: [ 
     AppComponent, 
@@ -35,7 +35,6 @@ import {TableBasicExample} from './bearing/bearinglist';
     RegisterComponent,
     LoginComponent, 
     BearingListDataSource,
-    
   ],
   entryComponents: [BearingListDataSource],
   providers: [BearingService,TableBasicExample,BearingListDataSource],

@@ -6,7 +6,7 @@ import {
 } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { map, catchError, retry } from "rxjs/operators";
-import { Bearing } from './bearinglist.component';
+import { Bearing } from './bearinglist-datasource';
 import {MatTableDataSource} from '@angular/material/table';
 
 @Injectable({
