@@ -12,15 +12,15 @@
    <!-- Position Column -->
   <ng-container matColumnDef="brand_name">
     <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let item of bearings"> {{item.brand_name}} </td>
+    <td mat-cell *ngFor="let element of bearings"> {{element.brand_name}} </td>
   </ng-container>
   <ng-container matColumnDef="bearing_model_number">
     <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let item of bearings"> {{item.bearing_model_number}} </td>
+    <td mat-cell *ngFor="let element of bearings"> {{element.bearing_model_number}} </td>
   </ng-container>
   <ng-container matColumnDef="amount">
     <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let item of bearings"> {{item.amount}} </td>
+    <td mat-cell *ngFor="let element of bearings"> {{element.amount}} </td>
   </ng-container>
    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
