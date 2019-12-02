@@ -14,7 +14,9 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 
-import { BearingListComponent } from './bearing/bearinglist';
+import { BearingListDataSource } from './bearing/bearinglist/bearinglist-datasource';
+
+import {TableBasicExample} from './bearing/bearinglist';
 
 @NgModule({
   imports:      [ 
@@ -32,11 +34,11 @@ import { BearingListComponent } from './bearing/bearinglist';
     HomeComponent,
     RegisterComponent,
     LoginComponent, 
-    BearingListComponent,
+    BearingListDataSource,
     
   ],
-  entryComponents: [],
-  providers: [BearingService],
+  entryComponents: [BearingListDataSource],
+  providers: [BearingService,TableBasicExample,BearingListDataSource],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
