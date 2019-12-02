@@ -35,7 +35,9 @@ const ELEMENT_DATA: Bearing12[] = [
   {brand_name: "3", bearing_model_number: "Hydrogen", amount: "1", bearing_id: "3"},
   {brand_name: "2", bearing_model_number: "Helium", amount: "4", bearing_id: "3"},
   {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
-
+  {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
+  {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
+  {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
 ];
 
 @Component({ 
@@ -58,10 +60,7 @@ export class BearingListComponent implements OnInit {
   constructor(private bearingService: BearingService) {}
   ngOnInit() {
     this.getbearings();
-    this.dataSource.data = ELEMENT_DATA;
-    this.dataSource.paginator = this.paginator;
   }
-
   getbearings(): void {
     this.bearingService.getAll().subscribe(
       (res: Bearing[]) => {
@@ -69,9 +68,12 @@ export class BearingListComponent implements OnInit {
       },
       err => {
         this.error = err;
-      }
+      }   
     );
+    this.dataSource.data = this.bearings;
+    this.dataSource.paginator = this.paginator;
   }
+  
   dataSource2 = new MatTableDataSource(this.bearings);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     billing:any[]=[];

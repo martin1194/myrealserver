@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { appRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
@@ -15,7 +15,9 @@ import { RegisterComponent } from './register';
 import { BearingListComponent } from './bearing/bearinglist/';
 
 import {TableBasicExample} from './bearing/bearinglist';
-
+import {MatNativeDateModule} from '@angular/material/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import {TableBasicExample} from './bearing/bearinglist';
     HttpClientModule, 
     appRoutingModule,
     BearingModule,
+    ReactiveFormsModule
   ],
   declarations: [ 
     AppComponent, 
@@ -36,7 +39,7 @@ import {TableBasicExample} from './bearing/bearinglist';
     TableBasicExample
   ],
   entryComponents: [BearingListComponent,TableBasicExample],
-  providers: [BearingService,BearingListComponent],
+  providers: [BearingService,BearingListComponent,TableBasicExample],
   bootstrap:    [ AppComponent,BearingListComponent,TableBasicExample],
   exports: [BearingModule,],
 })

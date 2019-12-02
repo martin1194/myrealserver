@@ -25,14 +25,12 @@
     <mat-header-cell *matHeaderCellDef> bearing_id </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </mat-cell>
   </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
+    <mat-header-row *matHeaderRowDef="['brand_name', 'bearing_model_number', 'amount', 'bearing_id']"></mat-header-row>
+    <mat-row *matRowDef="let rows; columns: ['brand_name', 'bearing_model_number', 'amount', 'bearing_id'];"></mat-row>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
-<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 <div id="beading amount"class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">
