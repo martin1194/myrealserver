@@ -16,15 +16,20 @@ import {MatTableDataSource} from '@angular/material/table';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
-import {BearingModule} from './bearing.moudule';
+import { BearingModule } from './bearing.moudule';
 
 export interface Bearing {
   brand_name: string;
   model_number: string;
-  amount: number;
-  bearing_id: number;
+  amount: string;
+  bearing_id: string;
 }
+const ELEMENT_DATA: Bearing[] = [
+  {brand_name: "3", model_number: 'Hydrogen', amount: "1", bearing_id: "3"},
+  {brand_name: "2", model_number: 'Helium', amount: "4", bearing_id: "3"},
+  {brand_name: "1", model_number: 'Lithium', amount: "6", bearing_id: "3"},
 
+];
 
 @Component({ 
   selector: 'bearinglist.component',
@@ -36,7 +41,7 @@ export class BearingListComponent implements OnInit {
   constructor(private bearingService: BearingService) {}
   ngOnInit() {
     this.getbearings();
-    this.dataSource.data = this.bearings;
+    this.dataSource.data = ELEMENT_DATA;
     this.dataSource.paginator = this.paginator;
   }
 
@@ -54,7 +59,7 @@ export class BearingListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     billing:any[]=[];
 
-
+dataSource1 = ELEMENT_DATA;
 }
 
 
