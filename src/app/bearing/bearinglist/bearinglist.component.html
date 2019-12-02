@@ -8,7 +8,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="brand_name">
     <mat-header-cell *matHeaderCellDef> brand_name </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.brand_name}} </mat-cell>
@@ -25,8 +25,8 @@
     <mat-header-cell *matHeaderCellDef> bearing_id </mat-header-cell>
     <mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </mat-cell>
   </ng-container>
-    <mat-header-row *matHeaderRowDef="['brand_name', 'model_number', 'amount', 'bearing_id']"></mat-header-row>
-    <mat-row *matRowDef="let rows; columns: ['brand_name', 'model_number', 'amount', 'bearing_id']"></mat-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

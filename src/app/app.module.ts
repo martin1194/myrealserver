@@ -32,11 +32,12 @@ import {TableBasicExample} from './bearing/bearinglist';
     HomeComponent,
     RegisterComponent,
     LoginComponent, 
-    BearingListComponent
+    BearingListComponent,
+    TableBasicExample
   ],
-  entryComponents: [BearingListComponent],
-  providers: [BearingService,TableBasicExample,BearingListComponent],
-  bootstrap:    [ AppComponent,BearingListComponent],
+  entryComponents: [BearingListComponent,TableBasicExample],
+  providers: [BearingService,BearingListComponent],
+  bootstrap:    [ AppComponent,BearingListComponent,TableBasicExample],
   exports: [BearingModule,],
 })
 export class AppModule { }
