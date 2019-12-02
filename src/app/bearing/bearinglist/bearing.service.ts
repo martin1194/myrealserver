@@ -4,9 +4,6 @@ import {
   HttpErrorResponse,
   HttpParams
 } from "@angular/common/http";
-
-
-
 import { Observable, throwError } from "rxjs";
 import { map, catchError, retry } from "rxjs/operators";
 import { Bearing } from './bearinglist.component';
