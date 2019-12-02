@@ -8,30 +8,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-<table class="mat-elevation-z8">
-<!--table mat-table [dataSource]="dataSource" class="mat-elevation-z8"-->
-   <!-- Position Column -->
-  <ng-container matColumnDef="brand_name">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let element of bearings"> {{element.brand_name}} </td>
-  </ng-container>
-  <ng-container matColumnDef="bearing_model_number">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let element of bearings"> {{element.bearing_model_number}} </td>
-  </ng-container>
-  <ng-container matColumnDef="amount">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *ngFor="let element of bearings"> {{element.amount}} </td>
-  </ng-container>
-   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    <th>HI</th>
-    <th>HI</th>
-  <tr>
-    <td>HI</td>
-    <td>HI</td>
-  </tr>
-</table>
+
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 <div id="beading amount"class="container">
