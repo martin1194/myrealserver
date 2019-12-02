@@ -61,6 +61,10 @@ export class BearingListComponent implements OnInit {
   ngOnInit() {
     this.getbearings();
   }
+  ngAfterContentInit() {
+    this.dataSource.data = this.bearings;
+    this.dataSource.paginator = this.paginator;
+  }
   getbearings(): void {
     this.bearingService.getAll().subscribe(
       (res: Bearing[]) => {
@@ -70,8 +74,6 @@ export class BearingListComponent implements OnInit {
         this.error = err;
       }   
     );
-    this.dataSource.data = this.bearings;
-    this.dataSource.paginator = this.paginator;
   }
   
   dataSource2 = new MatTableDataSource(this.bearings);
