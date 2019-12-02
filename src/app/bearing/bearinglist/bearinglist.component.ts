@@ -20,8 +20,6 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ["bearinglist.component.css"] })
 export class BearingListComponent implements OnInit {
   bearings: Bearing[];
-  error = "錯誤";
-  success = "成功";
   constructor(private bearingService: BearingService) {}
   ngOnInit() {
     this.getbearings();
@@ -46,10 +44,7 @@ export class BearingListComponent implements OnInit {
 }
 
 
-export class TableBasicExample {
-  displayedColumns: string[] = ['brand_name', 'model_number', 'amount', 'bearing_id'];
-  dataSource = bearings;
-}
+
   export class Bearing1 {
   constructor(
     brand_name: string,
@@ -65,4 +60,8 @@ export interface Bearing {
   model_number: string;
   amount: number;
   bearing_id: number;
+}
+
+export class TableBasicExample {
+  displayedColumns: string[] = ['brand_name', 'model_number', 'amount', 'bearing_id'];
 }
