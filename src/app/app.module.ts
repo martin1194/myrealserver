@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { appRoutingModule } from './app.routing';
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {BearingModule} from './bearing/bearinglist/bearing.moudule';
@@ -14,9 +12,11 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 
-import { BearingListDataSource } from './bearing/bearinglist/bearinglist-datasource';
+import { BearingListComponent } from './bearing/bearinglist/';
 
 import {TableBasicExample} from './bearing/bearinglist';
+
+
 
 @NgModule({
   imports:      [ 
@@ -24,8 +24,6 @@ import {TableBasicExample} from './bearing/bearinglist';
     FormsModule, 
     HttpClientModule, 
     appRoutingModule,
-    MatTableModule,
-    MatFormFieldModule,
     BearingModule,
   ],
   declarations: [ 
@@ -34,10 +32,10 @@ import {TableBasicExample} from './bearing/bearinglist';
     HomeComponent,
     RegisterComponent,
     LoginComponent, 
-    BearingListDataSource,
+    BearingListComponent
   ],
-  entryComponents: [BearingListDataSource],
-  providers: [BearingService,TableBasicExample,BearingListDataSource],
+  entryComponents: [],
+  providers: [BearingService,TableBasicExample],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
