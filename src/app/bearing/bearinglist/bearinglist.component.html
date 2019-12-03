@@ -6,6 +6,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
 <div class="mat-app-background basic-container">
 <div class="mat-elevation-z8">
+  <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
   <table mat-table [dataSource]="dataSource">
 
   <ng-container matColumnDef="brand_name">
@@ -24,17 +27,20 @@
   </ng-container>
 
   <ng-container matColumnDef="bearing_id">
-    <th mat-header-cell *matHeaderCellDef> bearing_id </th>
-    <td mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </td>
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let bearings"></td>
   </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let rows; columns: displayedColumns;"></tr>
   </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" 
+[pageSize]="100"
+showFirstLastButtons></mat-paginator>
 </div>
 </div>
 
+<!--
 <div id="beading amount"class="container">
   <div class="row">
 
@@ -64,6 +70,6 @@
     </table>
   </div>
 </div>
-  
+  -->
 
 

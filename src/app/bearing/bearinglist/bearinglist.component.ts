@@ -47,6 +47,9 @@ export class BearingListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   bearings: Bearing[];
   constructor(private bearingService: BearingService) {}
+  applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   ngOnInit() {
     this.getbearings();
   }
@@ -58,6 +61,7 @@ export class BearingListComponent implements OnInit {
         this.bearings = res;
         this.dataSource.data = res;
         this.dataSource.paginator = this.paginator;
+        
       },
       err => {
         this.error = err;
