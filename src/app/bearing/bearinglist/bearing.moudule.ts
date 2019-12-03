@@ -42,6 +42,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
+  imports: [
+  ],
   exports: [
     A11yModule,
     CdkStepperModule,
@@ -88,6 +90,9 @@ import {MatTreeModule} from '@angular/material/tree';
   ]
 })
 export class BearingModule {}
+
+
+
 
 
 /**  Copyright 2019 Google LLC. All Rights Reserved.

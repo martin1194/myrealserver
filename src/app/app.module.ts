@@ -14,10 +14,13 @@ import { RegisterComponent } from './register';
 
 import { BearingListComponent } from './bearing/bearinglist/';
 
-import {TableBasicExample} from './bearing/bearinglist';
+
 import {MatNativeDateModule} from '@angular/material/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -27,6 +30,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule, 
     appRoutingModule,
     BearingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule
   ],
   declarations: [ 
@@ -36,11 +40,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RegisterComponent,
     LoginComponent, 
     BearingListComponent,
-    TableBasicExample
   ],
-  entryComponents: [BearingListComponent,TableBasicExample],
-  providers: [BearingService,BearingListComponent,TableBasicExample],
-  bootstrap:    [ AppComponent,BearingListComponent,TableBasicExample],
+  entryComponents: [BearingListComponent,],
+  providers: [BearingService],
+  bootstrap:    [ AppComponent,],
   exports: [BearingModule,],
 })
 export class AppModule { }

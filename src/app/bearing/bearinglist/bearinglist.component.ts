@@ -25,7 +25,7 @@ export interface Bearing {
   bearing_id: string;
 }
 
-const ELEMENT_DATA: Bearing12[] = [
+const ELEMENT_DATA: Bearing[] = [
   {brand_name: "3", bearing_model_number: "Hydrogen", amount: "1", bearing_id: "3"},
   {brand_name: "2", bearing_model_number: "Helium", amount: "4", bearing_id: "3"},
   {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
@@ -34,14 +34,7 @@ const ELEMENT_DATA: Bearing12[] = [
   {brand_name: "1", bearing_model_number: "Lithium", amount: "6", bearing_id: "3"},
 ];
 
-@Component({ 
-  selector: 'bearinglist.component1',
-  templateUrl: "bearinglist.component.html",
-  styleUrls: ["bearinglist.component.css"] })
-export class TableBasicExample {
-  displayedColumns: string[] = ["brand_name", "bearing_model_number", "amount", "bearing_id"];
-  dataSource = ELEMENT_DATA;
-}
+
 
 
 @Component({ 
@@ -49,13 +42,13 @@ export class TableBasicExample {
   templateUrl: "bearinglist.component.html",
   styleUrls: ["bearinglist.component.css"] })
 export class BearingListComponent implements OnInit {
+  displayedColumns: string[] = ["brand_name", "bearing_model_number", "amount", "bearing_id"];
   dataSource = new MatTableDataSource<Bearing>();
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   bearings: Bearing[];
   constructor(private bearingService: BearingService) {}
   ngOnInit() {
     this.getbearings();
-    this.dataSource.paginator = this.paginator;
   }
   ngAfterContentInit() {
   }
@@ -64,6 +57,7 @@ export class BearingListComponent implements OnInit {
       (res: Bearing[]) => {
         this.bearings = res;
         this.dataSource.data = res;
+        this.dataSource.paginator = this.paginator;
       },
       err => {
         this.error = err;

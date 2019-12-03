@@ -3,48 +3,41 @@
 <div *ngIf="success">{{success}}</div>
 
 <h2>BEARING數量</h2>
-<mat-form-field>
- <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
 
+<div class="mat-app-background basic-container">
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
 
   <ng-container matColumnDef="brand_name">
-    <mat-header-cell *matHeaderCellDef> 牌子名 </mat-header-cell>
-    <mat-cell *matCellDef="let bearings"> {{bearings.brand_name}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> 牌子名 </th>
+    <td mat-cell *matCellDef="let bearings"> {{bearings.brand_name}} </td>
   </ng-container>
 
   <ng-container matColumnDef="bearing_model_number">
-    <mat-header-cell *matHeaderCellDef> 型號 </mat-header-cell>
-    <mat-cell *matCellDef="let bearings"> {{bearings.bearing_model_number}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> 型號 </th>
+    <td mat-cell *matCellDef="let bearings"> {{bearings.bearing_model_number}} </td>
   </ng-container>
 
   <ng-container matColumnDef="amount">
-    <mat-header-cell *matHeaderCellDef> 數量 </mat-header-cell>
-    <mat-cell *matCellDef="let bearings"> {{bearings.amount}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> 數量 </th>
+    <td mat-cell *matCellDef="let bearings"> {{bearings.amount}} </td>
   </ng-container>
 
   <ng-container matColumnDef="bearing_id">
-    <mat-header-cell *matHeaderCellDef> bearing_id </mat-header-cell>
-    <mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> bearing_id </th>
+    <td mat-cell *matCellDef="let bearings"> {{bearings.bearing_id}} </td>
   </ng-container>
   
-    <mat-header-row *matHeaderRowDef="['brand_name', 'bearing_model_number', 'amount', 'bearing_id']"></mat-header-row>
-    <mat-row *matRowDef="let rows; columns: ['brand_name', 'bearing_model_number', 'amount', 'bearing_id'];"></mat-row>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let rows; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
 </div>
 
 <div id="beading amount"class="container">
   <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="md-form">
-        <input type="text" class="form-control" [(ngModel)]="searchText" (keyup)="searchItems()" id="search-input"
-               mdbInput>
-        <label for="search-input">Search</label>
-      </div>
-    </div>
+
     <table stickyHeader="true" hover="true" striped="true" class="z-depth-1">
       <thead class="sticky-top">
          <tr>
